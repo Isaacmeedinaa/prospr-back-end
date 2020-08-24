@@ -1,0 +1,2 @@
+class ProspsController < ApplicationController
+end
