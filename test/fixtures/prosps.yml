@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyString
+  prosprimage: one
+  pro: one
+  browser: one
+
+two:
+  title: MyString
+  content: MyString
+  prosprimage: two
+  pro: two
+  browser: two

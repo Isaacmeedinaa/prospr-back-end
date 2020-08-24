@@ -1,0 +1,2 @@
+class ProspImagesController < ApplicationController
+end
