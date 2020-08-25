@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Browser.destroy_all
-# Pro.destroy_all
-# Prosp.destroy_all
-# Recommendation.destroy_all
-# ProspImage.destroy_all
-# RecommendationImage.destroy_all
-# ProspComment.destroy_all
-# RecommendationComment.destroy_all
+Browser.destroy_all
+Pro.destroy_all
+Prosp.destroy_all
+Recommendation.destroy_all
+ProspImage.destroy_all
+RecommendationImage.destroy_all
+ProspComment.destroy_all
+RecommendationComment.destroy_all
 
 # Browsers
 alex = Browser.create(first_name: 'Alex', last_name: 'Medina', email: 'alexmedina04@gmail.com', phone_number: '+1 (773) 555-9090', date_of_birth: '04/04/1997', city: 'Chicago', state: 'IL', zipcode: '60623', country: 'USA', profile_img_url: 'https://images.pexels.com/photos/4330308/pexels-photo-4330308.jpeg', password: 'Abc123')
@@ -24,10 +24,10 @@ isaac = Pro.create(first_name: 'Isaac', last_name: 'Medina', email: 'isaacmedina
 josue = Pro.create(first_name: 'Josue', last_name: 'Aceves', email: 'josueaceves@illinoisproadjusters.com', phone_number: '+1 (630) 800-0610', date_of_birth: '05/10/1985', business_name: 'Illinois Pro Adjusters, Inc.', business_mission: 'If your roof is damaged and has missing shingles due to a wind or a hail storm, please call ILLINOIS PRO ADJUSTERS, we are a Public Adjuster Firm dedicated to protect the rights of the homeowner. When a homeowner files a claim, most likely the insurance adjuster will turn it down; they are trained and paid to protect the interest of the insurance company, But if the claim is handled by a certified public adjuster, it can be approved and the homeowner will get a free new roof.', business_year_founded: '2017', business_website: 'http://www.illinoisproadjusters.com/', business_industry: 'Pro Adjusters', address_line_one: '4154 W 31st St', address_line_two: '', city: 'Chicago', state: 'IL', zipcode: '60623', country: 'USA', profile_img_url: 'https://i.imgur.com/1MicSFe.jpg', password: 'Abc123')
 
 # Prosps
-prosp_one = Prosp.create(title: 'We Develop Amazing Websites!', content: 'The websites we develop for your business include free hosting, a domain, $100 maintenance fee, beautiful design, responsive design, and marketing!', pro_id: 1)
-prosp_two = Prosp.create(title: 'We Develop Amazing Mobile Apps!', content: 'The mobile apps we develop for your business include free hosting, a domain, $200 maintenance fee, beautiful design, responsive design, and marketing!', pro_id: 1)
-prosp_three = Prosp.create(title: 'We Help You Do a Beneficial Insurance Claim!', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', pro_id: 2)
-prosp_four = Prosp.create(title: 'Free Consultation!', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry!', pro_id: 2)
+prosp_one = Prosp.create(title: 'We Develop Amazing Websites!', content: 'The websites we develop for your business include free hosting, a domain, $100 maintenance fee, beautiful design, responsive design, and marketing!', pro: isaac)
+prosp_two = Prosp.create(title: 'We Develop Amazing Mobile Apps!', content: 'The mobile apps we develop for your business include free hosting, a domain, $200 maintenance fee, beautiful design, responsive design, and marketing!', pro: isaac)
+prosp_three = Prosp.create(title: 'We Help You Do a Beneficial Insurance Claim!', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', pro: josue)
+prosp_four = Prosp.create(title: 'Free Consultation!', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry!', pro: josue)
 
 # Recommendations
 recommendation_one = Recommendation.create(title: 'Website developer needed', content: 'I own a small business in Chicago. I need a website done. Please get in touch with me ASAP!', browser: alex)
@@ -61,4 +61,4 @@ end
 
 # Payment Methods
 payment_method_one = PaymentMethod.create(card_number: '4589379248043944', month: '02', year: '2024', cvv: '056', card_type: 'VISA', first_name: 'Isaac', last_name: 'Medina', address_line_one: '4151 W 31st St', address_line_two: '', city: 'Chicago', state: 'IL', zipcode: '60623', country: 'USA', pro: isaac)
-payment_method_one = PaymentMethod.create(card_number: '5375787744197839', month: '08', year: '2022', cvv: '145', card_type: 'MASTERCARD', first_name: 'Josue', last_name: 'Aceves', address_line_one: '4154 W 31st St', address_line_two: '', city: 'Chicago', state: 'IL', zipcode: '60623', country: 'USA', pro: josue)
+payment_method_two = PaymentMethod.create(card_number: '5375787744197839', month: '08', year: '2022', cvv: '145', card_type: 'MASTERCARD', first_name: 'Josue', last_name: 'Aceves', address_line_one: '4154 W 31st St', address_line_two: '', city: 'Chicago', state: 'IL', zipcode: '60623', country: 'USA', pro: josue)

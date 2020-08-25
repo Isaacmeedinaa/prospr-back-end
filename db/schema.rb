@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_232428) do
+ActiveRecord::Schema.define(version: 2020_08_25_000213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,19 +29,6 @@ ActiveRecord::Schema.define(version: 2020_08_23_232428) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.bigint "browser_id", null: false
-    t.bigint "pro_id", null: false
-    t.bigint "recommendation_id", null: false
-    t.bigint "prosp_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["browser_id"], name: "index_likes_on_browser_id"
-    t.index ["pro_id"], name: "index_likes_on_pro_id"
-    t.index ["prosp_id"], name: "index_likes_on_prosp_id"
-    t.index ["recommendation_id"], name: "index_likes_on_recommendation_id"
   end
 
   create_table "payment_methods", force: :cascade do |t|
@@ -105,6 +92,17 @@ ActiveRecord::Schema.define(version: 2020_08_23_232428) do
     t.index ["prosp_id"], name: "index_prosp_images_on_prosp_id"
   end
 
+  create_table "prosp_likes", force: :cascade do |t|
+    t.bigint "browser_id", null: false
+    t.bigint "pro_id", null: false
+    t.bigint "prosp_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["browser_id"], name: "index_prosp_likes_on_browser_id"
+    t.index ["pro_id"], name: "index_prosp_likes_on_pro_id"
+    t.index ["prosp_id"], name: "index_prosp_likes_on_prosp_id"
+  end
+
   create_table "prosps", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -132,6 +130,15 @@ ActiveRecord::Schema.define(version: 2020_08_23_232428) do
     t.index ["recommendation_id"], name: "index_recommendation_images_on_recommendation_id"
   end
 
+  create_table "recommendation_likes", force: :cascade do |t|
+    t.bigint "browser_id", null: false
+    t.bigint "recommendation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["browser_id"], name: "index_recommendation_likes_on_browser_id"
+    t.index ["recommendation_id"], name: "index_recommendation_likes_on_recommendation_id"
+  end
+
   create_table "recommendations", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -141,17 +148,18 @@ ActiveRecord::Schema.define(version: 2020_08_23_232428) do
     t.index ["browser_id"], name: "index_recommendations_on_browser_id"
   end
 
-  add_foreign_key "likes", "browsers"
-  add_foreign_key "likes", "pros"
-  add_foreign_key "likes", "prosps"
-  add_foreign_key "likes", "recommendations"
   add_foreign_key "payment_methods", "pros"
   add_foreign_key "prosp_comments", "browsers"
   add_foreign_key "prosp_comments", "prosps"
   add_foreign_key "prosp_images", "prosps"
+  add_foreign_key "prosp_likes", "browsers"
+  add_foreign_key "prosp_likes", "pros"
+  add_foreign_key "prosp_likes", "prosps"
   add_foreign_key "prosps", "pros"
   add_foreign_key "recommendation_comments", "browsers"
   add_foreign_key "recommendation_comments", "recommendations"
   add_foreign_key "recommendation_images", "recommendations"
+  add_foreign_key "recommendation_likes", "browsers"
+  add_foreign_key "recommendation_likes", "recommendations"
   add_foreign_key "recommendations", "browsers"
 end

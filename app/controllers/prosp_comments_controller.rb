@@ -1,2 +1,0 @@
-class ProspCommentsController < ApplicationController
-end
