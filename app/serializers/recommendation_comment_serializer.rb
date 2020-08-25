@@ -1,5 +1,5 @@
 class RecommendationCommentSerializer < ActiveModel::Serializer
   attributes :id, :content
-  has_one :browser
-  has_one :recommendation
+  belongs_to :browser
+  belongs_to :recommendation
 end

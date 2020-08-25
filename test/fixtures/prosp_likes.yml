@@ -3,11 +3,9 @@
 one:
   browser: one
   pro: one
-  recommendation: one
   prosp: one
 
 two:
   browser: two
   pro: two
-  recommendation: two
   prosp: two
