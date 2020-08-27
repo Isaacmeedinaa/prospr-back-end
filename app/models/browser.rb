@@ -15,7 +15,7 @@ class Browser < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, confirmation: true
     validate :password_requirements
 
-    # password config
+    # password protection
     has_secure_password
 
     def password_requirements
