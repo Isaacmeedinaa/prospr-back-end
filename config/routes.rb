@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       post '/pro_login', to: 'auth#pro_login'
       get '/browser_auto_login', to: 'auth#browser_auto_login'
       get '/pro_auto_login', to: 'auth#pro_auto_login'
+
+      # register
+      post '/browser_register', to: 'browsers#register'
       
       resources :pros
       resources :browsers
