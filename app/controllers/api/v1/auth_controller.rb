@@ -1,7 +1,7 @@
 class Api::V1::AuthController < ApplicationController
     skip_before_action :authorized, only: [:browser_login, :pro_login]
 
-    def browser_login   
+    def browser_login 
         @browser = Browser.find_by(email: browser_login_params[:email])
 
         if @browser && @browser.authenticate(browser_login_params[:password])
@@ -32,8 +32,11 @@ class Api::V1::AuthController < ApplicationController
     end
 
     def pro_auto_login
+        puts '-------------'
+        puts @pro
+        puts '-------------'
         if logged_in_pro
-            render json: { status: 200, pro: ProSerializer.new(@browser) } 
+            render json: { status: 200, pro: ProSerializer.new(@pro) } 
         else
             render json: { status: 401, error_message: 'No pro is logged in!', login: :unauthorized }
         end

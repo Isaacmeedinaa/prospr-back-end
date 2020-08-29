@@ -27,7 +27,7 @@ class Api::V1::BrowsersController < ApplicationController
     private 
 
     def browser_register_params
-        params.require(:browser).permit(:first_name, :last_name, :email, :phone_number, :password, :confirm_password)
+        params.require(:browser).permit(:first_name, :last_name, :email, :phone_number, :password, :password_confirmation)
     end
 
     def browser_profile_params
