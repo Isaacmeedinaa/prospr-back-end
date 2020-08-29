@@ -10,7 +10,7 @@ class Api::V1::BrowsersController < ApplicationController
             @jwt_token = encode_token(browser_id: @browser.id)
             render json: { status: 200, browser: BrowserSerializer.new(@browser), jwt_token: @jwt_token }
         else
-            render json: { status: 401, message: @browser.errors.full_messages }
+            render json: { status: 401, error_messages: @browser.errors.full_messages }
         end
     end
 

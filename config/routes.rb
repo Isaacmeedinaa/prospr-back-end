@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
       # register
       post '/browser_register', to: 'browsers#register'
+      post '/pro_register', to: 'pros#register'
       
       resources :pros
       resources :browsers
