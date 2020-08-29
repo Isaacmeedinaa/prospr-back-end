@@ -10,8 +10,8 @@ class Browser < ApplicationRecord
     # validations
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :email, presence: true, uniqueness: true, case_sensitive: false, format: { with: URI::MailTo::EMAIL_REGEXP }
-    validates :phone_number, presence: true, uniqueness: true, format: { with: /\A\d+\z/ }
+    validates :email, presence: true, uniqueness: true, case_sensitive: false, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+    validates :phone_number, presence: true, uniqueness: true, length: { minimum: 10 }, format: { with: /\A\d+\z/ }
     validates :password, presence: true, length: { minimum: 6 }, confirmation: true
     validate :password_requirements
 
