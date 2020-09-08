@@ -32,9 +32,6 @@ class Api::V1::AuthController < ApplicationController
     end
 
     def pro_auto_login
-        puts '-------------'
-        puts @pro
-        puts '-------------'
         if logged_in_pro
             render json: { status: 200, pro: ProSerializer.new(@pro) } 
         else
