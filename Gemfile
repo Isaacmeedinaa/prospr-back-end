@@ -29,6 +29,8 @@ gem 'jwt'
 
 gem "figaro"
 
+gem 'will_paginate', '~> 3.1.0'
+
 gem 'active_model_serializers'
 
 gem 'faker'
