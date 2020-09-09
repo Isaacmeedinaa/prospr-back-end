@@ -3,7 +3,7 @@ class Api::V1::RecommendationsController < ApplicationController
     skip_before_action :authorized, only: [:index, :show]
 
     def index
-        @recommendations = Recommendation.all.paginate(page: params[:page], per_page: 2)
+        @recommendations = Recommendation.all.order('created_at DESC').paginate(page: params[:page], per_page: 4)
         render json: @recommendations
     end
 
@@ -18,7 +18,18 @@ class Api::V1::RecommendationsController < ApplicationController
         if @recommendation.valid?
             render json: { status: 200, recommendation: RecommendationSerializer.new(@recommendation) }
         else
-            render json: { status: 401, messages: @recommendation.errors.full_messages }
+            render json: { status: 401, error_messages: @recommendation.errors.full_messages }
+        end
+    end
+
+    def destroy
+        @recommendation = Recommendation.find_by(id: params[:id])
+
+        if @recommendation
+            @recommendation.destroy
+            render json: { status: 200 }
+        else
+            render json: { status: 401, error_messages: @recommendation.errors.full_messages }
         end
     end
 
