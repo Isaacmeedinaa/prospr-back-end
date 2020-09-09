@@ -12,4 +12,19 @@ class Api::V1::RecommendationsController < ApplicationController
         render json: @recommendations
     end
 
+    def create
+        @recommendation = Recommendation.create(recommendation_params)
+
+        if @recommendation.valid?
+            render json: { status: 200, recommendation: RecommendationSerializer.new(@recommendation) }
+        else
+            render json: { status: 401, messages: @recommendation.errors.full_messages }
+        end
+    end
+
+    private 
+
+    def recommendation_params
+        params.require(:recommendation).permit(:title, :content, :browser_id)
+    end
 end
