@@ -22,6 +22,17 @@ class Api::V1::RecommendationsController < ApplicationController
         end
     end
 
+    def update
+        @recommendation = Recommendation.find_by(id: params[:id])
+        @recommendation.update(recommendation_params)
+
+        if @recommendation.valid?
+            render json: { status: 200, recommendation: RecommendationSerializer.new(@recommendation) }
+        else
+            render json: { status: 401, error_messages: @recommendation.errors.full_messages }
+        end
+    end
+
     def destroy
         @recommendation = Recommendation.find_by(id: params[:id])
 
