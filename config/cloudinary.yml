@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: zenyx-llc
+  api_key: "225451795643782"
+  api_secret: uLwG2dPALw356-P1ZJl9Phu06mc
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: zenyx-llc
+  api_key: "225451795643782"
+  api_secret: uLwG2dPALw356-P1ZJl9Phu06mc
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: zenyx-llc
+  api_key: "225451795643782"
+  api_secret: uLwG2dPALw356-P1ZJl9Phu06mc
+  enhance_image_tag: true
+  static_file_support: false
