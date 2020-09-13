@@ -24,8 +24,8 @@ class Api::V1::RecommendationsController < ApplicationController
 
             @recommendation.save
 
-            params[:media_urls].each do |media_url|
-                RecommendationImage.create(img_url: media_url, recommendation_id: @recommendation.id)
+            params[:media_objs].each do |media_obj|
+                RecommendationImage.create(img_url: media_obj['url'], img_type: media_obj['type'], recommendation_id: @recommendation.id)
             end
 
             render json: { status: 200, recommendation: RecommendationSerializer.new(@recommendation) }
