@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_000213) do
 
   create_table "prosp_images", force: :cascade do |t|
     t.string "img_url"
+    t.string "img_type"
     t.bigint "prosp_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -124,6 +125,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_000213) do
 
   create_table "recommendation_images", force: :cascade do |t|
     t.string "img_url"
+    t.string "img_type"
     t.bigint "recommendation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

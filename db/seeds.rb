@@ -37,16 +37,16 @@ recommendation_three = Recommendation.create(title: 'Anyone selling video games?
 recommendation_four = Recommendation.create(title: 'I recommend this business!', content: 'Zenyx LLC helped my business grow by building an amazing website!.', browser: mico)
 
 # Prosp Images
-prosp_image_one = ProspImage.create(img_url: 'https://www.zenyx.io/images/photos/features/1.png', prosp: prosp_one)
-prosp_image_two = ProspImage.create(img_url: 'https://www.zenyx.io/images/photos/header.jpg', prosp: prosp_two)
-prosp_image_three = ProspImage.create(img_url: 'https://specials-images.forbesimg.com/imageserve/1026205392/960x0.jpg', prosp: prosp_three)
-prosp_image_four = ProspImage.create(img_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/suburban-house-royalty-free-image-1584972559.jpg', prosp: prosp_four)
+prosp_image_one = ProspImage.create(img_url: 'https://www.zenyx.io/images/photos/features/1.png', img_type: 'image', prosp: prosp_one)
+prosp_image_two = ProspImage.create(img_url: 'https://www.zenyx.io/images/photos/header.jpg', img_type: 'image', prosp: prosp_two)
+prosp_image_three = ProspImage.create(img_url: 'https://specials-images.forbesimg.com/imageserve/1026205392/960x0.jpg', img_type: 'image', prosp: prosp_three)
+prosp_image_four = ProspImage.create(img_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/suburban-house-royalty-free-image-1584972559.jpg', img_type: 'image', prosp: prosp_four)
 
 # Recommendation Images
-recommendation_image_one = RecommendationImage.create(img_url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png', recommendation: recommendation_one)
-recommendation_image_two = RecommendationImage.create(img_url: 'https://staticecp.uprinting.com/96/450x450/Standard_Business_Cards_Marketing_Material_A.jpg', recommendation: recommendation_two)
-recommendation_image_three = RecommendationImage.create(img_url: 'https://s17189.pcdn.co/blog/wp-content/uploads/2018/04/jeshoots-com-250229-unsplash-1060x540.jpg', recommendation: recommendation_three)
-recommendation_image_four = RecommendationImage.create(img_url: 'https://www.zenyx.io/images/photos/header.jpg', recommendation: recommendation_four)
+recommendation_image_one = RecommendationImage.create(img_url: 'https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png', img_type: 'image', recommendation: recommendation_one)
+recommendation_image_two = RecommendationImage.create(img_url: 'https://staticecp.uprinting.com/96/450x450/Standard_Business_Cards_Marketing_Material_A.jpg', img_type: 'image', recommendation: recommendation_two)
+recommendation_image_three = RecommendationImage.create(img_url: 'https://s17189.pcdn.co/blog/wp-content/uploads/2018/04/jeshoots-com-250229-unsplash-1060x540.jpg', img_type: 'image', recommendation: recommendation_three)
+recommendation_image_four = RecommendationImage.create(img_url: 'https://www.zenyx.io/images/photos/header.jpg', img_type: 'image', recommendation: recommendation_four)
 
 # Prosp Comments
 10.times do
